@@ -1,0 +1,20 @@
+import java.io.IOException;
+
+import javax.swing.JFrame;
+
+public class GUIDashboard {
+	
+	
+   public static void main(String[] args) throws IOException {
+	   
+      JFrame myFrame = new JFrame();
+      
+         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         myFrame.setResizable(true);
+         myFrame.setLocationRelativeTo(null);
+         myFrame.setSize(750, 750); 
+         myFrame.setTitle("Dashboard");
+         myFrame.getContentPane().add(new APanel());
+         myFrame.setVisible(true);
+}
+}
