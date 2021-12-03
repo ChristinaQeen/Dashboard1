@@ -1,0 +1,114 @@
+
+
+
+
+
+import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+public class APanel extends JPanel {
+	
+	
+
+
+
+public APanel() throws IOException{
+	
+setLayout(null);
+ 
+JButton myProfil = new JButton("Profil bearbeiten");
+add(myProfil);
+myProfil.addActionListener( new AListener());
+myProfil.setVisible(true);
+myProfil.setBounds(80,600,140,27);
+
+
+JLabel willkommenLabel = new JLabel ("Welcome to your Dashboard!");
+add(willkommenLabel);
+//willkommenLabel.setVisible(true);
+willkommenLabel.setBounds(60,10,300,60);
+
+BufferedImage myPicture = ImageIO.read(new File("Images\\Unknown3.png"));
+JLabel Picture = new JLabel(new ImageIcon(myPicture));
+add(Picture);
+//lab.setVisible(true);
+Picture.setBounds(0,30,300,300);
+
+JLabel infoLabel = new JLabel ();
+add(infoLabel);
+infoLabel.setText("Info: ");
+//infoLabel.setVisible(true);
+infoLabel.setBounds(60,290,140,40);
+
+JTextField Suche = new JTextField();
+add(Suche);
+Suche.setPreferredSize(new Dimension(200,27));
+Suche.setEditable(true);
+//Suche.setVisible(true);
+Suche.setBounds(350,90,200,27);
+
+JButton mySearch = new JButton();
+add(mySearch);
+mySearch.setText("Suchen");
+//mySearch.setVisible(true);
+mySearch.setBounds(570,90,140,26);
+
+JLabel myName = new JLabel();
+add(myName);
+myName.setText("Name:                Max Mustermann");
+//myName.setVisible(true);
+myName.setBounds(60,330,220,40);
+
+JLabel myAge = new JLabel();
+add(myAge);
+myAge.setText("Alter:                  20");
+//myAge.setVisible(true);
+myAge.setBounds(60,355,160,40);
+
+JLabel mySex = new JLabel();
+add(mySex);
+mySex.setText("Geschlecht:      männlich");
+//mySex.setVisible(true);
+mySex.setBounds(60,380,160,40);
+
+JLabel myPlaceOfResidence = new JLabel();
+add(myPlaceOfResidence);
+myPlaceOfResidence.setText("Wohnort:           Berlin-Mitte");
+//myPlaceOfResidence.setVisible(true);
+myPlaceOfResidence.setBounds(60,405,160,40);
+
+JLabel myDegreeCourse = new JLabel();
+add(myDegreeCourse);
+myDegreeCourse.setText("Studiengang:    Wirtschaftsinformatik");
+//myDegreeCourse.setVisible(true);
+myDegreeCourse.setBounds(60,430,220,40);
+
+JLabel myHobby = new JLabel();
+add(myHobby);
+myHobby.setText("Hobby :               Fußball");
+//myHobby.setVisible(true);
+myHobby.setBounds(60,455,220,40);
+
+JButton myChat = new JButton("Chat");
+add(myChat);
+//myChat.setVisible(true);
+myChat.setBounds(570,600,140,27);
+
+
+
+
+
+}
+
+
+}
