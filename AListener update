@@ -1,0 +1,65 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+public class AListener implements ActionListener {
+	APanel myPanel;
+	public AListener(APanel myPanel) {
+		this.myPanel = myPanel;
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getActionCommand().equals("Profil bearbeiten")) {
+			myPanel.toggleEditMode();
+//			JFrame editFrame = new JFrame();
+//
+//			editFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//			editFrame.setResizable(true);
+//			editFrame.setLocationRelativeTo(null);
+//			editFrame.setSize(750, 750);
+//			editFrame.setTitle("Profil bearbeiten");
+//			try {
+//				editFrame.getContentPane().add(new BPanel());
+//			} catch (IOException e1) {
+//				// TODO Auto-generated catch block
+//				e1.printStackTrace();
+//			}
+//			editFrame.setVisible(true);
+
+		} else if (e.getActionCommand().equals("Speichern")) {
+			myPanel.toggleEditMode();
+			
+		}
+		
+		
+		if (e.getActionCommand().equals("Bild hinzufügen")) {
+			myPanel.chooserFile();
+			
+			
+				
+				
+				 
+					   
+					   
+				  
+					   
+				   }
+						
+			
+			
+		}
+			
+			
+			
+		}
