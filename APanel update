@@ -1,0 +1,357 @@
+
+import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class APanel extends JPanel {
+	
+	boolean editMode = true; // Profil bearbeiten button
+	JTextField txtHobby;
+	JTextField txtDegreeCourse;
+	JTextField txtPlaceOfResidence;
+	JTextField txtSex;
+	JTextField txtAge;
+	JTextField txtName;
+	JLabel myName;
+	JLabel myAge;
+	JLabel mySex;
+	JLabel myPlaceOfResidence;
+	JLabel myDegreeCourse;
+	JLabel myHobby;
+	
+	JLabel jName;
+	JLabel jAge;
+	JLabel jSex;
+	JLabel jPlaceOfResidence;
+	JLabel jDegreeCourse;
+	JLabel jHobby;
+	
+	
+	JButton myEditPic;
+	
+	boolean editPic = true;
+	
+
+	
+	
+	
+	public APanel() throws IOException {
+
+		setLayout(null);
+
+	
+
+//		JFileChooser profillBild = new JFileChooser();
+//
+//		profilBild.showSaveDialog(null);
+		
+		//"Images\\Unknown3.png"
+		
+		
+			
+
+			myName = new JLabel();
+			add(myName);
+			myName.setText("Name:");
+			myName.setVisible(true);
+			myName.setBounds(60, 350, 220, 40);
+
+			myAge = new JLabel();
+			add(myAge);
+			myAge.setText("Alter:");
+			myAge.setVisible(true);
+			myAge.setBounds(60, 380, 160, 40);
+
+			mySex = new JLabel();
+			add(mySex);
+			mySex.setText("Geschlecht:");
+			mySex.setVisible(true);
+			mySex.setBounds(60, 410, 160, 40);
+
+			myPlaceOfResidence = new JLabel();
+			add(myPlaceOfResidence);
+			myPlaceOfResidence.setText("Wohnort:");
+			myPlaceOfResidence.setVisible(true);
+			myPlaceOfResidence.setBounds(60, 440, 160, 40);
+
+			myDegreeCourse = new JLabel();
+			add(myDegreeCourse);
+			myDegreeCourse.setText("Studiengang:");
+			myDegreeCourse.setVisible(true);
+			myDegreeCourse.setBounds(60, 470, 220, 40);
+
+			myHobby = new JLabel();
+			add(myHobby);
+			myHobby.setText("Hobby :");
+			myHobby.setVisible(true);
+			myHobby.setBounds(60, 500, 220, 40);
+			
+			
+			
+		
+			
+			
+			
+			
+			JButton myChat = new JButton("Chat");
+			myChat.addActionListener(new AListener(this));
+			add(myChat);
+//myChat.setVisible(true);
+			myChat.setBounds(570, 600, 140, 27);
+
+			JButton myProfil = new JButton("Profil bearbeiten");
+			add(myProfil);
+			myProfil.addActionListener(new AListener(this));
+			myProfil.setVisible(true);
+			myProfil.setBounds(80, 600, 140, 27);
+
+			JLabel willkommenLabel = new JLabel("Welcome to your Dashboard!");
+			add(willkommenLabel);
+//willkommenLabel.setVisible(true);
+			willkommenLabel.setBounds(60, 10, 300, 60);
+
+			JLabel infoLabel = new JLabel();
+			add(infoLabel);
+			infoLabel.setText("Info: ");
+//infoLabel.setVisible(true);
+			infoLabel.setBounds(60, 310, 140, 40);
+
+			JTextField Suche = new JTextField();
+			add(Suche);
+			Suche.setPreferredSize(new Dimension(200, 27));
+			Suche.setEditable(true);
+//Suche.setVisible(true);
+			Suche.setBounds(350, 90, 200, 27);
+
+			JButton mySearch = new JButton();
+			add(mySearch);
+			mySearch.setText("Suchen");
+//mySearch.setVisible(true);
+			mySearch.setBounds(570, 90, 140, 27);
+			
+			
+			
+			
+			
+			JLabel jName = new JLabel();
+			add(jName);
+			jName.setText("Max Mustermann");
+			jName.setVisible(true);
+			jName.setBounds(200, 360, 160, 20);
+			
+			JLabel jAge = new JLabel();
+			add(jAge);
+			jAge.setText("22");
+			jAge.setVisible(true);
+			jAge.setBounds(200, 390, 160, 20);
+
+			JLabel jSex = new JLabel();
+			add(jSex);
+			jSex.setText("männlich");
+			jSex.setVisible(true);
+			jSex.setBounds(200, 419, 160, 20);
+
+			JLabel jPlaceOfResidence = new JLabel();
+			 add(jPlaceOfResidence);
+			 jPlaceOfResidence.setText("Berlin-Mitte");
+			jPlaceOfResidence.setVisible(true);
+			jPlaceOfResidence.setBounds(200, 450, 160, 20);
+
+			 JLabel jDegreeCourse = new JLabel();
+			add(jDegreeCourse);
+			jDegreeCourse.setText("Wirtschatfsinformatik");
+			jDegreeCourse.setVisible(true);
+			jDegreeCourse.setBounds(200, 480, 160, 20);
+
+			JLabel jHobby = new JLabel();
+			add(jHobby);
+			jHobby.setText("Lesen");
+			jHobby.setVisible(true);
+			jHobby.setBounds(200, 510, 160, 20);
+
+			
+			
+			
+			
+			
+			txtName = new JTextField();
+			add(txtName);
+			
+			txtName.setVisible(false);
+			txtName.setBounds(380, 360, 160, 20);
+			
+			txtAge = new JTextField();
+			add(txtAge);
+			
+			txtAge.setVisible(false);
+			txtAge.setBounds(380, 390, 160, 20);
+
+			txtSex = new JTextField();
+			add(txtSex);
+			
+			txtSex.setVisible(false);
+			txtSex.setBounds(380, 420, 160, 20);
+
+			 txtPlaceOfResidence = new JTextField();
+			 add(txtPlaceOfResidence);
+			 
+			txtPlaceOfResidence.setVisible(false);
+			txtPlaceOfResidence.setBounds(380, 450, 160, 20);
+
+			 txtDegreeCourse = new JTextField();
+			add(txtDegreeCourse);
+			
+			txtDegreeCourse.setVisible(false);
+			txtDegreeCourse.setBounds(380, 480, 160, 20);
+
+			 txtHobby = new JTextField();
+			add(txtHobby);
+		
+			txtHobby.setVisible(false);
+			txtHobby.setBounds(380, 510, 160, 20);
+
+		}
+	
+	
+	public void toggleEditMode () {
+		
+		if (editMode) {
+			editMode = false;
+			
+			
+			
+			 myName.setVisible(true);;
+			 myAge.setVisible(true);
+			 mySex.setVisible(true);
+			 myPlaceOfResidence.setVisible(true);
+			 myDegreeCourse.setVisible(true);
+			 myHobby.setVisible(true);
+			 
+			
+			 
+			  txtHobby.setVisible(true);
+				 txtDegreeCourse.setVisible(true);
+				 txtPlaceOfResidence.setVisible(true);
+				 txtSex.setVisible(true);
+				 txtAge.setVisible(true);
+				 txtName.setVisible(true);
+				 
+				 JButton mySave = new JButton();
+					add(mySave);
+					mySave.setText("Speichern");
+					mySave.addActionListener(new AListener(this));
+					mySave.setVisible(true);
+					mySave.setBounds(320,600,140,27);
+					
+					JButton myEditPic = new JButton("Bild hinzufügen");
+					add(myEditPic);
+					myEditPic.addActionListener(new AListener(this));
+					myEditPic.setVisible(true);
+					myEditPic.setBounds(80,285,140,27);
+		
+			
+		} else {
+			editMode = true;
+			myName.setVisible(true);;
+		 myAge.setVisible(true);
+		 mySex.setVisible(true);
+		 myPlaceOfResidence.setVisible(true);
+		 myDegreeCourse.setVisible(true);
+		 myHobby.setVisible(true);
+			 
+			 
+			 
+			  txtHobby.setVisible(false);
+				 txtDegreeCourse.setVisible(false);
+				 txtPlaceOfResidence.setVisible(false);
+				 txtSex.setVisible(false);
+				 txtAge.setVisible(false);
+				 txtName.setVisible(false);
+				 
+				 String h = txtHobby.getText();
+				 myHobby.setText(h);
+				 
+				 String d = txtDegreeCourse.getText();
+				 myDegreeCourse.setText(d);
+				 
+				 String p = txtPlaceOfResidence.getText();
+				 myPlaceOfResidence.setText(p);
+				 
+				 String s = txtSex.getText();
+				 mySex.setText(s);
+				 
+				 String a = txtAge.getText();
+				 myAge.setText(a);
+				 
+				 String n = txtName.getText();
+				 myName.setText(n);
+				 
+				 JButton mySave = new JButton();
+					add(mySave);
+					mySave.setText("Speichern");
+					mySave.addActionListener(new AListener(this));
+					mySave.setVisible(false);
+					mySave.setBounds(320,600,140,27);
+					
+				JButton myEditPic = new JButton("Bild hinzufügen");
+					add(myEditPic);
+					myEditPic.addActionListener(new AListener(this));
+					myEditPic.setVisible(false);
+					myEditPic.setBounds(80,285,140,27);
+				
+					
+					
+		
+		}
+
+	}
+	
+	
+		
+		
+		
+	
+	
+	public void chooserFile () {
+		
+		JFileChooser profilBild = new JFileChooser("Dateiauswahl");
+		 int result = profilBild.showSaveDialog(null);
+		   if (result == JFileChooser.APPROVE_OPTION) {
+			   ImageIcon myPicture = new ImageIcon(profilBild.getSelectedFile().getAbsolutePath());
+			 JLabel Picture = new JLabel(myPicture);
+			 add(Picture);
+			 Picture.setBounds(60,60,250,200);
+			 Picture.setVisible(true);
+		
+		  if (editPic) {
+			editPic = false;
+			
+			JButton myEditPic = new JButton("Bild hinzufügen");
+			add(myEditPic);
+			myEditPic.addActionListener(new AListener(this));
+			myEditPic.setVisible(true);
+			myEditPic.setBounds(80,285,140,27);
+			
+			
+			
+			
+				
+		} else {
+			
+			editPic = true; 
+			
+			
+		}
+		
+	}
+	}
+}
